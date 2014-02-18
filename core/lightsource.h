@@ -1,5 +1,7 @@
 #ifndef LIGHTSOURCE_H
 #define LIGHTSOURCE_H
+#include "vector3f.h"
+#include "spectrum.h"
 
 /**
  * Light sources provide illumination for rendered scenes.

@@ -1,8 +1,6 @@
 #include "clamptonemapper.h"
 
-ClampTonemapper::ClampTonemapper()
-{
-}
+namespace fs = boost::filesystem;
 
 /**
 * Perform tone mapping and return a {@link java.awt.image.BufferedImage}.
@@ -10,9 +8,9 @@ ClampTonemapper::ClampTonemapper()
 * @param film the film to be tonemapped
 * @return the output image
 */
-cairo_surface_t* ClampTonemapper::process(Film film)
+pngwriter* ClampTonemapper::process(Film film)
 {
-    cairo_surface_t* img = cairo_image_surface_create (CAIRO_FORMAT_ARGB32, film.getWidth(), film.getHeight());
+    pngwriter* img = new pngwriter(film.getWidth(), film.getHeight(), 0, fs::unique_path().c_str() );
 
    for(int i=0; i<film.getWidth(); i++)
    {
@@ -21,7 +19,7 @@ cairo_surface_t* ClampTonemapper::process(Film film)
            // Clamping
            Spectrum s = film.getImage()[i][j];
            s.clamp(0,1);
-           img.setRGB(i, film.getHeight()-1-j, ((int)(255.f*s.r) << 16) | ((int)(255.f*s.g) << 8) | ((int)(255.f*s.b)));
+           img->plot(i, film.getHeight()-1-j, s.x(), s.y(), s.z());
        }
    }
    return img;

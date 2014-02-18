@@ -2,11 +2,14 @@
 #include "dummycamera.h"
 #include "boxfilterfilm.h"
 #include "clamptonemapper.h"
+#include "mandelbrotintegrator.h"
+#include "randomsampler.h"
+using std::make_shared;
 
 Mandelbrot::Mandelbrot()
 {
     // Output file name
-    outputFilename = new String("../output/basicscenes/Mandelbrot");
+    outputFilename = "../output/basicscenes/Mandelbrot";
 
     // Width and height of output image in pixels
     width = 1024;

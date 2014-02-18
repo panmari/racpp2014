@@ -1,5 +1,6 @@
 #ifndef FILM_H
 #define FILM_H
+#include "spectrum.h"
 
 /**
  * A film stores a 2D grid of {@link rt.Spectrum} representing an image.
@@ -25,7 +26,7 @@ public:
      *
      * @return the image
      */
-    virtual vector<vector<Spectrum> > getImage();
+    virtual std::vector<std::vector<Spectrum> > getImage();
 
     /**
      * Returns width (in pixels) of film.

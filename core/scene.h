@@ -5,16 +5,15 @@
 /**
  * Defines scene properties that need to be made accessible to the renderer.
  */
-class Scene
-{
+class Scene {
 public:
     Scene();
 
-    IntegratorFactory* getIntegratorFactory() {
+    IntegratorFactory*  getIntegratorFactory() {
         return integratorFactory;
     }
 
-    SamplerFactory* getSamplerFactory() {
+    SamplerFactory*  getSamplerFactory() {
         return samplerFactory;
     }
 
@@ -23,19 +22,19 @@ public:
         return outputFilename;
     }
 
-    Camera* getCamera() {
+    Camera*  getCamera() {
         return camera;
     }
 
-    Film* getFilm() {
+    Film*  getFilm() {
         return film;
     }
 
-    Intersectable* getIntersectable() {
+    Intersectable*  getIntersectable() {
         return root;
     }
 
-    LightList* getLightList() {
+    LightList*  getLightList() {
         return lightList;
     }
 
@@ -43,25 +42,27 @@ public:
         return SPP;
     }
 
-    Tonemapper* getTonemapper()
+    Tonemapper*  getTonemapper()
     {
         return tonemapper;
     }
 
-    void prepare();
+    virtual void prepare();
+    virtual ~Scene();
 
 protected:
     string outputFilename;
+    /// Samples per pixel
     int SPP;
     int width;
     int height;
-    Camera *camera;
-    Film *film;
-    IntegratorFactory *integratorFactory;
-    SamplerFactory *samplerFactory;
-    Tonemapper *tonemapper;
-    Intersectable *root;
-    LightList *lightList;
+    Camera* camera;
+    Film* film;
+    IntegratorFactory* integratorFactory;
+    SamplerFactory* samplerFactory;
+    Tonemapper* tonemapper;
+    Intersectable* root;
+    LightList* lightList;
 };
 
 #endif // SCENE_H

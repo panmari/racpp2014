@@ -1,11 +1,22 @@
 #ifndef MANDELBROTINTEGRATOR_H
 #define MANDELBROTINTEGRATOR_H
-#include "core/integrator.h"
+#include "integrator.h"
+#include "scene.h"
 
 class MandelbrotIntegrator : public Integrator
 {
 public:
-    MandelbrotIntegrator();
+    virtual Spectrum integrate(Ray r);
+    virtual vector<vector<float> > makePixelSamples(Sampler sampler, int n);
+};
+
+class MandelbrotIntegratorFactory : public IntegratorFactory {
+public:
+  Integrator make(Scene scene) {
+    return MandelbrotIntegrator();
+  }
+
+  void prepareScene(Scene scene) { }
 };
 
 #endif // MANDELBROTINTEGRATOR_H

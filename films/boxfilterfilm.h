@@ -13,9 +13,10 @@ public:
     const int width, height;
 
 private:
-    Spectrum[][] image;
-    Spectrum[][] unnormalized;
-    float nSamples[][];
+    std::vector<std::vector<Spectrum> > image;
+    std::vector<std::vector<Spectrum> > unnormalized;
+    float **nSamples;
+    void addSample(double x, double y, Spectrum s);
 
     int getWidth()
     {
@@ -27,7 +28,7 @@ private:
         return height;
     }
 
-    Spectrum[][] getImage()
+    std::vector<std::vector<Spectrum> > getImage()
     {
         return image;
     }

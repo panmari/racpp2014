@@ -2,8 +2,7 @@
 #define MANDELBROT_H
 #include "scene.h"
 
-class Mandelbrot : public Scene
-{
+class Mandelbrot : public Scene {
 public:
     Mandelbrot();
 };

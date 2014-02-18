@@ -1,8 +1,7 @@
 #include "randomsampler.h"
 
-RandomSampler::RandomSampler()
-{
-}
+static boost::random::mt19937_64 rng;
+static boost::random::uniform_real_distribution<> uniform(0,1);
 
 /**
  * Makes @param n uniform random samples in @param d
@@ -15,10 +14,10 @@ vector<vector<float> > RandomSampler::makeSamples(int n, int d)
 
     for(int i=0; i<n; i++)
     {
-        samples[i] = vector<vector<float> >(d);
+        samples[i] = vector<float> (d);
         for(int j=0; j<d; j++)
         {
-            samples[i][j] = random.nextFloat();
+            samples[i][j] = uniform(rng);
         }
     }
     return samples;

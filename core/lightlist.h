@@ -3,9 +3,6 @@
 #include "lightsource.h"
 #include <vector>
 
-class LightList : public std::vector<Lightsource>
-{
-public:
-};
+typedef std::vector<Lightsource> LightList;
 
 #endif // LIGHTLIST_H

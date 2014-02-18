@@ -1,5 +1,6 @@
 #ifndef RAY_H
 #define RAY_H
+#include "vector3f.h"
 
 /**
  * A ray represented by an origin and a direction.

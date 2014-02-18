@@ -1,8 +1,5 @@
 #include "mandelbrotintegrator.h"
 
-MandelbrotIntegrator::MandelbrotIntegrator()
-{
-}
 
 /**
  * Compute Mandelbrot set. See <a href="http://en.wikipedia.org/wiki/Mandelbrot_set">.
@@ -10,8 +7,8 @@ MandelbrotIntegrator::MandelbrotIntegrator()
 Spectrum MandelbrotIntegrator::integrate(Ray r)
 {
     // Assumes ray x and y direction is in range [0,1] across the image.
-    float x0 = r.direction.x*3.5f-2.5f;
-    float y0 = r.direction.y*2.f-1.f;
+    float x0 = r.direction.x()*3.5f-2.5f;
+    float y0 = r.direction.y()*2.f-1.f;
 
     float x = 0.f;
     float y = 0.f;
@@ -26,10 +23,10 @@ Spectrum MandelbrotIntegrator::integrate(Ray r)
         iteration = iteration + 1;
     }
 
-    return new Spectrum((float)iteration/(float)max_iteration, (float)iteration/(float)max_iteration, (float)iteration/(float)max_iteration);
+    return Spectrum((float)iteration/(float)max_iteration, (float)iteration/(float)max_iteration, (float)iteration/(float)max_iteration);
 }
 
-float[][] MandelbrotIntegrator::makePixelSamples(Sampler sampler, int n)
+vector<vector<float> > MandelbrotIntegrator::makePixelSamples(Sampler sampler, int n)
 {
     return sampler.makeSamples(n, 2);
 }

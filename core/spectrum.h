@@ -9,6 +9,17 @@
 class Spectrum : public Vector3f
 {
 public:
+  Spectrum() {}
+  Spectrum(Vector3f const& v) {
+    int i = 0;
+    for (float d : v.data()) {
+      data()[i] = d;
+      i++;
+    }
+  }
+  Spectrum(float x, float y, float z) : Vector3f(x,y,z) { }
+
+  void clamp(float min, float max);
 
 };
 

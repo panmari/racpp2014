@@ -1,5 +1,6 @@
 #ifndef INTERSECTABLE_H
 #define INTERSECTABLE_H
+#include "ray.h"
 class HitRecord;
 
 /**

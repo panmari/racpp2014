@@ -1,5 +1,6 @@
 #ifndef SAMPLERFACTORY_H
 #define SAMPLERFACTORY_H
+#include "sampler.h"
 
 /**
  * Makes a {@link Sampler}.
