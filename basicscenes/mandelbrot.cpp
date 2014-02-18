@@ -1,7 +1,7 @@
 #include "mandelbrot.h"
-#include "cameras/dummycamera.h"
-#include "films/boxfilterfilm.h"
-#include "tonemappers/clamptonemapper.h"
+#include "dummycamera.h"
+#include "boxfilterfilm.h"
+#include "clamptonemapper.h"
 
 Mandelbrot::Mandelbrot()
 {
