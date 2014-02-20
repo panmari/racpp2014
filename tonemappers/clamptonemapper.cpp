@@ -10,7 +10,7 @@ namespace fs = boost::filesystem;
 */
 pngwriter* ClampTonemapper::process(Film &film)
 {
-    pngwriter* img = new pngwriter(film.getWidth(), film.getHeight(), 0, fs::unique_path().c_str() );
+   pngwriter* img = new pngwriter(film.getWidth(), film.getHeight(), 0, fs::unique_path().c_str() );
 
    for(int i=0; i<film.getWidth(); i++)
    {

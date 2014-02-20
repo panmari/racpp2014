@@ -1,8 +1,7 @@
 project(Rendering-Algorithms-2014)
-set(Boost_FIND_COMPONENTS random REQUIRED)
-FIND_PACKAGE( Boost COMPONENTS random filesystem REQUIRED )
-FIND_PACKAGE( Freetype )
-FIND_PACKAGE( PNG )
+FIND_PACKAGE(Boost REQUIRED)
+FIND_PACKAGE(Freetype REQUIRED)
+FIND_PACKAGE(PNG REQUIRED)
 ADD_DEFINITIONS( -std=c++11 )
 cmake_minimum_required(VERSION 2.8)
 
@@ -17,4 +16,7 @@ endforeach()
 list(REMOVE_DUPLICATES Rendering_INCLUDE_DIRS)
 
 include_directories(${Rendering_INCLUDE_DIRS} ${Boost_INCLUDE_DIR} "/usr/include/freetype2" ${PNG_INCLUDE_DIR})
-add_executable (ra2014 ${Rendering_SOURCES} )
+
+add_executable (ra2014 ${Rendering_SOURCES})
+
+target_link_libraries(ra2014 ${Boost_LIBRARIES} ${Freetype_LIBRARIES} ${PNG_LIBRARIES})
