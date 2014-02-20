@@ -9,7 +9,7 @@
 class Tonemapper
 {
 public:
-    virtual pngwriter* process(Film film) = 0;
+    virtual pngwriter* process(Film &film) = 0;
 };
 
 #endif // TONEMAPPER_H

@@ -13,7 +13,7 @@ public:
 
 class RandomSamplerFactory : public SamplerFactory {
 public:
-  Sampler make() { return RandomSampler(); }
+  Sampler* make() { return new RandomSampler(); }
 };
 
 #endif // RANDOMSAMPLER_H

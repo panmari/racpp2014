@@ -7,13 +7,13 @@ class MandelbrotIntegrator : public Integrator
 {
 public:
     virtual Spectrum integrate(Ray r);
-    virtual vector<vector<float> > makePixelSamples(Sampler sampler, int n);
+    virtual vector<vector<float> > makePixelSamples(Sampler &sampler, int n);
 };
 
 class MandelbrotIntegratorFactory : public IntegratorFactory {
 public:
-  Integrator make(Scene scene) {
-    return MandelbrotIntegrator();
+  Integrator* make(Scene &scene) {
+      return new MandelbrotIntegrator();
   }
 
   void prepareScene(Scene scene) { }

@@ -26,7 +26,7 @@ Spectrum MandelbrotIntegrator::integrate(Ray r)
     return Spectrum((float)iteration/(float)max_iteration, (float)iteration/(float)max_iteration, (float)iteration/(float)max_iteration);
 }
 
-vector<vector<float> > MandelbrotIntegrator::makePixelSamples(Sampler sampler, int n)
+vector<vector<float> > MandelbrotIntegrator::makePixelSamples(Sampler &sampler, int n)
 {
     return sampler.makeSamples(n, 2);
 }

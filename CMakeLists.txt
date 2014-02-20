@@ -1,4 +1,4 @@
-project(Rendering-Algorighms-2014)
+project(Rendering-Algorithms-2014)
 set(Boost_FIND_COMPONENTS random REQUIRED)
 FIND_PACKAGE( Boost COMPONENTS random filesystem REQUIRED )
 FIND_PACKAGE( Freetype )

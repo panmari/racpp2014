@@ -10,20 +10,13 @@ class BoxFilterFilm : public Film
 {
 public:
     BoxFilterFilm(const int width, const int height);
-    const int width, height;
 
-private:
-    std::vector<std::vector<Spectrum> > image;
-    std::vector<std::vector<Spectrum> > unnormalized;
-    float **nSamples;
-    void addSample(double x, double y, Spectrum s);
-
-    int getWidth()
+    int getWidth() const
     {
         return width;
     }
 
-    int getHeight()
+    int getHeight() const
     {
         return height;
     }
@@ -32,6 +25,13 @@ private:
     {
         return image;
     }
+
+private:
+    const int width, height;
+    std::vector<std::vector<Spectrum> > image;
+    std::vector<std::vector<Spectrum> > unnormalized;
+    float **nSamples;
+    void addSample(double x, double y, Spectrum s);
 };
 
 #endif // BOXFILTERFILM_H

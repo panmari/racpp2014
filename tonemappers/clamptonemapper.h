@@ -8,7 +8,7 @@
 class ClampTonemapper : public Tonemapper
 {
 public:
-    pngwriter* process(Film film);
+    pngwriter* process(Film &film);
 };
 
 #endif // CLAMPTONEMAPPER_H

@@ -19,28 +19,28 @@ public:
      * @param y y-coordinate in image space
      * @param s sample to be added
      */
-    virtual void addSample(double x, double y, Spectrum s);
+    virtual void addSample(double x, double y, Spectrum s) = 0;
 
     /**
      * Returns the image stored in the film.
      *
      * @return the image
      */
-    virtual std::vector<std::vector<Spectrum> > getImage();
+    virtual std::vector<std::vector<Spectrum> > getImage() = 0;
 
     /**
      * Returns width (in pixels) of film.
      *
      * @return width in pixels
      */
-    virtual int getWidth();
+    virtual int getWidth() const = 0;
 
     /**
      * Returns height (in pixels) of film.
      *
      * @return height in pixels
      */
-    virtual int getHeight();
+    virtual int getHeight() const = 0;
 };
 
 #endif // FILM_H

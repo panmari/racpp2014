@@ -21,7 +21,7 @@ public:
      * @param d dimensionality of samples
      * @return the array of d-dimensional samples samples
      */
-    virtual vector<vector<float> > makeSamples(int n, int d);
+    virtual vector<vector<float> > makeSamples(int n, int d) = 0;
 };
 
 #endif // SAMPLER_H

@@ -8,7 +8,7 @@ namespace fs = boost::filesystem;
 * @param film the film to be tonemapped
 * @return the output image
 */
-pngwriter* ClampTonemapper::process(Film film)
+pngwriter* ClampTonemapper::process(Film &film)
 {
     pngwriter* img = new pngwriter(film.getWidth(), film.getHeight(), 0, fs::unique_path().c_str() );
 

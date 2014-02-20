@@ -17,7 +17,7 @@ BoxFilterFilm::BoxFilterFilm(const int _width, const int _height) : width(_width
 void BoxFilterFilm::addSample(double x, double y, Spectrum s)
 {
   int xi = static_cast<int>(x);
-  int yi = static_cast<int>(x);
+  int yi = static_cast<int>(y);
     if(xi>=0 && xi<width && yi>=0 && yi<height)
     {
         unnormalized[xi][yi] += s;

@@ -10,8 +10,8 @@ class IntegratorFactory
 {
 public:
     IntegratorFactory();
-    virtual Integrator make(Scene scene);
-    virtual void prepareScene(Scene scene);
+    virtual Integrator* make(Scene &scene);
+    virtual void prepareScene(Scene &scene);
 };
 
 #endif // INTEGRATORFACTORY_H

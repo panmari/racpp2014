@@ -28,7 +28,7 @@ public:
      * @param r the ray
      * @return the contribution of the ray to the image
      */
-    virtual Spectrum integrate(Ray r);
+    virtual Spectrum integrate(Ray r) = 0;
 
     /**
      * Generate samples required by the integrator to evaluate
@@ -38,7 +38,7 @@ public:
      * @param n the desired number of samples
      * @return the array of samples
      */
-    virtual vector<vector<float> > makePixelSamples(Sampler sampler, int n);
+    virtual vector<vector<float> > makePixelSamples(Sampler &sampler, int n) = 0;
 };
 
 #endif // INTEGRATOR_H
