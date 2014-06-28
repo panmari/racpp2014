@@ -16,7 +16,7 @@ public:
       return new MandelbrotIntegrator();
   }
 
-  void prepareScene(Scene scene) { }
+  void prepareScene(Scene &scene) { };
 };
 
 #endif // MANDELBROTINTEGRATOR_H

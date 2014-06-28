@@ -48,14 +48,14 @@ public:
     /**
      * The {@link Intersectable} that was hit.
      */
-    Intersectable intersectable;
+    Intersectable *intersectable;
 
     /**
      * The material at the hit point.
      */
-    Material material;
+    Material *material;
 
-    HitRecord(float t, Vector3f position, Vector3f normal, Vector3f w, Intersectable intersectable, Material material, float u, float v);
+    HitRecord(float t, Vector3f position, Vector3f normal, Vector3f w, Intersectable &intersectable, Material &material, float u, float v);
 
     Vector3f getPositionVector()
     {

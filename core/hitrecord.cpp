@@ -1,13 +1,13 @@
 #include "hitrecord.h"
 
-HitRecord::HitRecord(float t, Vector3f position, Vector3f normal, Vector3f w, Intersectable intersectable, Material material, float u, float v)
+HitRecord::HitRecord(float t, Vector3f position, Vector3f normal, Vector3f w, Intersectable &intersectable, Material &material, float u, float v)
 {
     this->t = t;
     this->position = position;
     this->normal = normal;
     this->w = w;
-    this->intersectable = intersectable;
-    this->material = material;
+    this->intersectable = &intersectable;
+    this->material = &material;
     this->u = u;
     this->v = v;
 

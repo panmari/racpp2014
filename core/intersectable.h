@@ -9,15 +9,13 @@ class HitRecord;
 class Intersectable
 {
 public:
-    Intersectable();
-
     /**
      * Implement ray-surface intersection in this method.
      *
      * @param r the ray used for intersection testing
      * @return a hit record, should return null if there is no intersection
      */
-    virtual HitRecord intersect(Ray r);
+    virtual HitRecord intersect(Ray r) = 0;
 };
 
 #endif // INTERSECTABLE_H

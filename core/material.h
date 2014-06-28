@@ -49,29 +49,29 @@ public:
      * @param wIn Incoming direction, normalized and pointing away from the surface
      * @return BRDF value
      */
-    virtual Spectrum evaluateBRDF(HitRecord hitRecord, Vector3f wOut, Vector3f wIn);
+    virtual Spectrum evaluateBRDF(HitRecord hitRecord, Vector3f wOut, Vector3f wIn) = 0;
 
     /**
      * Return whether material has perfect specular reflection.
      */
-    virtual bool hasSpecularReflection();
+    virtual bool hasSpecularReflection() = 0;
 
     /**
      * Evaluate specular reflection. This method is typically called by a recursive
      * ray tracer to follow the path of specular reflection.
      */
-    virtual ShadingSample evaluateSpecularReflection(HitRecord hitRecord);
+    virtual ShadingSample evaluateSpecularReflection(HitRecord hitRecord)= 0;
 
     /**
      * Return whether the material has perfect specular refraction.
      */
-    virtual bool hasSpecularRefraction();
+    virtual bool hasSpecularRefraction()= 0;
 
     /**
      * Evaluate specular refraction. This method is typically called by a recursive
      * ray tracer to follow the path of specular refraction.
      */
-    virtual ShadingSample evaluateSpecularRefraction(HitRecord hitRecord);
+    virtual ShadingSample evaluateSpecularRefraction(HitRecord hitRecord)= 0;
 
     /**
      * Calculate a shading sample, given a uniform random sample as input. This
@@ -81,7 +81,7 @@ public:
      * incident direction, and returns the BRDF value, the direction, and the
      * probability density (stored in a {@link ShadingSample}).
      */
-    virtual ShadingSample getShadingSample(HitRecord hitRecord, float sample[]);
+    virtual ShadingSample getShadingSample(HitRecord hitRecord, float sample[])= 0;
 
 };
 

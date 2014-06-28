@@ -8,7 +8,6 @@
 
 int main()
 {
-    Mandelbrot m();
     Vector3f v1;
     v1 = Vector3f(1,1,1);
     Vector3f v2 = Vector3f(1,1,1);

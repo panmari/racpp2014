@@ -10,7 +10,7 @@ class SamplerFactory
 public:
     SamplerFactory();
 
-    virtual Sampler* make();
+    virtual Sampler* make() = 0;
 };
 
 #endif // SAMPLERFACTORY_H

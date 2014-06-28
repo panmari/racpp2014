@@ -7,7 +7,6 @@
  */
 class Scene {
 public:
-    Scene();
 
     IntegratorFactory*  getIntegratorFactory() {
         return integratorFactory;
@@ -47,8 +46,8 @@ public:
         return tonemapper;
     }
 
-    virtual void prepare();
-    virtual ~Scene();
+    virtual void prepare() = 0;
+    virtual ~Scene() {};
 
 protected:
     string outputFilename;
